@@ -35,16 +35,27 @@ namespace C1ChartCustomPointStyle
 			C1.Win.C1Chart.PointStyle				ps = sender as C1.Win.C1Chart.PointStyle;
 			C1.Win.C1Chart.ChartDataSeries		ds = c1Chart1.ChartGroups[0].ChartData[e.SeriesIndex];
 
-			int y = Convert.ToInt32(ds.Y[e.PointIndex]);
+         if (ds.Y3.Length == 0) return;
+
+			int y = Convert.ToInt32(ds.Y3[e.PointIndex]);
 
          Console.WriteLine("y = " + y.ToString());
 
-			if			(y > upperBoundary)  ps.SymbolStyle.Color = Color.Red;
-         else if	(y < lowerBoundary)  ps.SymbolStyle.Color = Color.Blue;
-			else						         ps.SymbolStyle.Color = Color.Black;
+			if			(y.Equals( 1)) ps.SymbolStyle.Color = Color.Red;
+         else if	(y.Equals(-1)) ps.SymbolStyle.Color = Color.Blue;
+			else						   ps.SymbolStyle.Color = Color.Black;
 
 			e.Selected = true;
 		}
+
+      private int       boundarySpecification(int theData)
+      {
+         int returnValue = 0;
+			if			(theData > upperBoundary)  returnValue =  1;
+         else if	(theData < lowerBoundary)  returnValue = -1;
+
+         return returnValue;
+      }
 
       private void      plot(string seriesLabel, DateTime theTime, int theData)
       {
@@ -89,14 +100,16 @@ namespace C1ChartCustomPointStyle
 
          // Plot the data
          Console.WriteLine("X = " + theTime.ToString() + ", Y = " + theData.ToString());
-         theSeries.X.Add(theTime );
-         theSeries.Y.Add(theData );
+         theSeries.X .Add(theTime                        );
+         theSeries.Y .Add(theData                        );
+         theSeries.Y3.Add(boundarySpecification(theData) );
 
          // Only show 60 seconds of data
          while (theSeries.PointData.Length > 60)
          {
-            theSeries.X.RemoveAt(0);
-            theSeries.Y.RemoveAt(0);
+            theSeries.X .RemoveAt(0);
+            theSeries.Y .RemoveAt(0);
+            theSeries.Y3.RemoveAt(0);
          }
 
       }
