@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C1ChartCustomPointStyle", "C1ChartCustomPointStyle\C1ChartCustomPointStyle.csproj", "{D3D6F33B-2638-43A8-BA25-0B45F1D71C87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3D6F33B-2638-43A8-BA25-0B45F1D71C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D6F33B-2638-43A8-BA25-0B45F1D71C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D6F33B-2638-43A8-BA25-0B45F1D71C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D6F33B-2638-43A8-BA25-0B45F1D71C87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D240DFA5-7582-4489-855C-CBF81A61B5A1}
+	EndGlobalSection
+EndGlobal
